@@ -2,8 +2,6 @@ import mongoose from 'mongoose';
 import faker from 'faker';
 
 
-mongoose.connect('mongodb://localhost:27017/w3s'
- );
 
 
 const userSchema = new mongoose.Schema({
@@ -59,9 +57,11 @@ const generateDummyUser = () => {
   };
 };
 
-git reset
 
-const createDummyUsers = async (count) => {
+
+const createDummyUsers = async (count ,url) => {
+    mongoose.connect(url);
+
   const users = [];
   for (let i = 0; i < count; i++) {
     users.push(generateDummyUser());
