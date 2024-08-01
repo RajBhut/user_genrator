@@ -1,8 +1,9 @@
 {
   "name": "user_genrator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "it is library to genrate dummy users for test of mongo db",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
