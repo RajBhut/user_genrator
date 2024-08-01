@@ -1,0 +1,23 @@
+{
+  "name": "user_genrator",
+  "version": "1.0.0",
+  "description": "it is library to genrate dummy users for test of mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RajBhut/user_genrator.git"
+  },
+  "author": "raj2803",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RajBhut/user_genrator/issues"
+  },
+  "homepage": "https://github.com/RajBhut/user_genrator#readme",
+  "dependencies": {
+    "faker": "^6.6.6",
+    "mongoose": "^8.5.2"
+  }
+}
