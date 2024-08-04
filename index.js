@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import faker from 'faker';
+import { faker} from '@faker-js/faker';
 
 
 
@@ -36,17 +36,17 @@ const User = mongoose.model('User', userSchema);
 
 const generateDummyUser = () => {
   return {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName,
+    lastName: faker.person.lastName(),
    
     address: {
-      street: faker.address.streetAddress(),
-      city: faker.address.city(),
-      state: faker.address.state(),
-      zipCode: faker.address.zipCode()
+      street: faker.location.streetAddress(),
+      city: faker.location.city(),
+      state: faker.location.state(),
+      zipCode: faker.location.zipCode()
     },
     phoneNumbers: [
-      { type: 'mobile', number: faker.phone.phoneNumber() }
+      { type: 'mobile', number: faker.phone.number() }
     ],
     hobbies: [...faker.lorem.words()],
     socialMedia: {
@@ -67,6 +67,8 @@ const createDummyUsers = async (count ,url) => {
     users.push(generateDummyUser());
   }
   await User.insertMany(users);
+  mongoose.connection.close;
+
 };
 export default createDummyUsers;
 
